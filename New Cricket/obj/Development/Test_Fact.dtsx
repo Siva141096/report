@@ -1,0 +1,3044 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/27/2018 4:26:20 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="PUNHWD11646"
+  DTS:CreatorName="CORP\akhipate"
+  DTS:DTSID="{FD0B553F-227D-40BE-B083-82C7DD42AA0A}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5583.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Test_Fact"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{C4E67AE9-56FE-4221-B5F8-15A0D844F0C9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{94D46D1A-07EA-4B18-8C2A-C47C49D8A685}"
+      DTS:ObjectName="blrinforma.SSISDB.bissis1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=blrinforma;User ID=bissis1;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbzBLKlUFy0qE4hajhatdhQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABvNGIJmfLn7+W8WwpXFB6IAAAAAASAAACgAAAAEAAAALP4Sr1inuOl3AvjYqZ56AkQAAAAeeHzmbZEkXPOZwezkt8z1BQAAACtwTkheOpnRKFYu3er8QqxBYwudw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Test  Fact"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DDFE6668-5728-4745-9FFF-66EE895218C2}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test  Fact"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Test  Fact\Convert balls into overs"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert balls into overs"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Bat_Inns]"
+                      cachedDataType="numeric"
+                      cachedName="Bat_Inns"
+                      cachedPrecision="3"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Not_Out]"
+                      cachedDataType="numeric"
+                      cachedName="Not_Out"
+                      cachedPrecision="3"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Balls]"
+                      cachedDataType="numeric"
+                      cachedName="Balls"
+                      cachedPrecision="3"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Balls]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Runs_Conceded]"
+                      cachedDataType="numeric"
+                      cachedName="Runs_Conceded"
+                      cachedPrecision="5"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Runs_Conceded]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Runs]"
+                      cachedDataType="numeric"
+                      cachedName="Runs"
+                      cachedPrecision="5"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Runs]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input].Columns[Wkts]"
+                      cachedDataType="numeric"
+                      cachedName="Wkts"
+                      cachedPrecision="3"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Overs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Overs]"
+                      name="Overs"
+                      precision="5"
+                      scale="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,5,1)([FLOOR](#{Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Balls]} / 6) + (DT_NUMERIC,2,1)((DT_I4)#{Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Balls]} % 6) / 10)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,5,1)(FLOOR(Balls / 6) + (DT_NUMERIC,2,1)((DT_I4)Balls % 6) / 10)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]"
+                      name="Bat_average"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,5,2)(#{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]} - #{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]} == 0 ? 0 : (#{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Runs]} / (#{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]} - #{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]})))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,5,2)(Bat_Inns - Not_Out == 0 ? 0 : (Runs / (Bat_Inns - Not_Out)))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]"
+                      name="ball_average"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,5,2)(#{Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]} == 0 ? 0 : (#{Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Runs_Conceded]} / #{Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,5,2)(Wkts == 0 ? 0 : (Runs_Conceded / Wkts))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Country Details"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Country Details"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_Country_Details_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_Country_Details_164278]) [refTable]
+where [refTable].[COUNTRY_NAME] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="COUNTRY_ID" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="COUNTRY_NAME" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Country]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\Country Details.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Country Details.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Country Details.Inputs[Lookup Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Country"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">COUNTRY_NAME</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Country Details.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Test  Fact\Country Details.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Country Details.Outputs[Lookup Match Output].Columns[COUNTRY_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="5"
+                      lineageId="Package\Test  Fact\Country Details.Outputs[Lookup Match Output].Columns[COUNTRY_ID]"
+                      name="COUNTRY_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">COUNTRY_ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Country Details.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Test  Fact\Country Details.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Country Details.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Test  Fact\Country Details.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Country Details.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Country Details.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Country Details.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Country Details.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Derived Column"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Test  Fact\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Test  Fact\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Derived Column 1"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input].Columns[Bat_average]"
+                      cachedDataType="numeric"
+                      cachedName="Bat_average"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input].Columns[ball_average]"
+                      cachedDataType="numeric"
+                      cachedName="ball_average"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Average_diff]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Average_diff]"
+                      name="Average_diff"
+                      precision="6"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]} &gt; #{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]} ? #{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]} - #{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]} : #{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]} - #{Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Bat_average &gt; ball_average ? Bat_average - ball_average : ball_average - Bat_average</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Lookup"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Test_Fact_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Test_Fact_164278]) [refTable]
+where [refTable].[Player_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Player_ID" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Span" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Matches" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Bat_Inns" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Not_out" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Runs_Conceded" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Hundreds" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fifties" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ducks" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Bat_average" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;referenceColumn name="High_Score" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Country_ID" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ball_Inns" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Maidens" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Overs" dataType="DT_NUMERIC" length="0" precision="5" scale="1" codePage="0"/&gt;&lt;referenceColumn name="Wickets" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BBI" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="BBM" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Ball_average" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Ball_SR" dataType="DT_NUMERIC" length="0" precision="6" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Ten_Wk_Haul" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Five_Wk_Haul" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Field_Inns" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Dissmissals" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Catches" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Stamping" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ct_Wk" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ct_Fi" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Average_diff" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Lookup.Inputs[Lookup Input].Columns[Player_ID]"
+                      cachedDataType="numeric"
+                      cachedName="Player_ID"
+                      cachedPrecision="5"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Player_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Test  Fact\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Player_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Player_ID]"
+                      name="Player_ID"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Player_ID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Span]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Span]"
+                      name="Span"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Span</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Matches]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Matches]"
+                      name="Matches"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Matches</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Bat_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Bat_Inns]"
+                      name="Bat_Inns"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Bat_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Not_out]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Not_out]"
+                      name="Not_out"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Not_out</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Runs_Conceded]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Runs_Conceded]"
+                      name="Runs_Conceded"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Runs_Conceded</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Hundreds]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Hundreds]"
+                      name="Hundreds"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Hundreds</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Fifties]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Fifties]"
+                      name="Fifties"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Fifties</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ducks]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ducks]"
+                      name="Ducks"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ducks</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[High_Score]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="4"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[High_Score]"
+                      name="High_Score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">High_Score</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Country_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="3"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Country_ID]"
+                      name="Country_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Country_ID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_Inns]"
+                      name="Ball_Inns"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ball_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Maidens]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Maidens]"
+                      name="Maidens"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Maidens</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Wickets]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Wickets]"
+                      name="Wickets"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Wickets</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[BBI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[BBI]"
+                      name="BBI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BBI</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[BBM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[BBM]"
+                      name="BBM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BBM</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_SR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_SR]"
+                      name="Ball_SR"
+                      precision="6"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ball_SR</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ten_Wk_Haul]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ten_Wk_Haul]"
+                      name="Ten_Wk_Haul"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ten_Wk_Haul</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Five_Wk_Haul]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Five_Wk_Haul]"
+                      name="Five_Wk_Haul"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Five_Wk_Haul</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Field_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Field_Inns]"
+                      name="Field_Inns"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Field_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Dissmissals]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Dissmissals]"
+                      name="Dissmissals"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Dissmissals</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Catches]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Catches]"
+                      name="Catches"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Catches</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Stamping]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Stamping]"
+                      name="Stamping"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Stamping</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ct_Wk]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ct_Wk]"
+                      name="Ct_Wk"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ct_Wk</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ct_Fi]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ct_Fi]"
+                      name="Ct_Fi"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ct_Fi</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Overs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Overs]"
+                      name="Overs"
+                      precision="5"
+                      scale="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Overs</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Bat_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Bat_average]"
+                      name="Bat_average"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Bat_average</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_average]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Ball_average]"
+                      name="Ball_average"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ball_average</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Average_diff]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output].Columns[Average_diff]"
+                      name="Average_diff"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Average_diff</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Test  Fact\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Test  Fact\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\OLE DB Destination"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Test_Fact_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Player_ID]"
+                      cachedDataType="numeric"
+                      cachedName="Player_ID"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Player_ID]"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_ID]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Span]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Span"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Span]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Span]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Matches]"
+                      cachedDataType="numeric"
+                      cachedName="Matches"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matches]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Matches]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Bat_Inns]"
+                      cachedDataType="numeric"
+                      cachedName="Bat_Inns"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bat_Inns]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Hundreds]"
+                      cachedDataType="numeric"
+                      cachedName="Hundreds"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hundreds]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Hundreds]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fifties]"
+                      cachedDataType="numeric"
+                      cachedName="Fifties"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fifties]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Fifties]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ducks]"
+                      cachedDataType="numeric"
+                      cachedName="Ducks"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ducks]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Ducks]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Not_Out]"
+                      cachedDataType="numeric"
+                      cachedName="Not_Out"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Not_out]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Field_Inns]"
+                      cachedDataType="numeric"
+                      cachedName="Field_Inns"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Field_Inns]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Field_Inns]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ct_Wk]"
+                      cachedDataType="numeric"
+                      cachedName="Ct_Wk"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ct_Wk]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Wk]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ct_Fi]"
+                      cachedDataType="numeric"
+                      cachedName="Ct_Fi"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ct_Fi]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Fi]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ball_Inns]"
+                      cachedDataType="numeric"
+                      cachedName="Ball_Inns"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_Inns]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ball_Inns]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Maidens]"
+                      cachedDataType="numeric"
+                      cachedName="Maidens"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maidens]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Maidens]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BBI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BBI"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BBI]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBI]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BBM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="BBM"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BBM]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBM]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ten_Wk_Haul]"
+                      cachedDataType="numeric"
+                      cachedName="Ten_Wk_Haul"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ten_Wk_Haul]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ten_Wk_Haul]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Five_Wk_Haul]"
+                      cachedDataType="numeric"
+                      cachedName="Five_Wk_Haul"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Five_Wk_Haul]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Five_Wk_Haul]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTRY_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="COUNTRY_ID"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_ID]"
+                      lineageId="Package\Test  Fact\Country Details.Outputs[Lookup Match Output].Columns[COUNTRY_ID]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Highest_Score]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Highest_Score"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[High_Score]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Highest_Score]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Runs]"
+                      cachedDataType="numeric"
+                      cachedName="Runs"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Runs_Conceded]"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Runs]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wkts]"
+                      cachedDataType="numeric"
+                      cachedName="Wkts"
+                      cachedPrecision="3"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wickets]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SR]"
+                      cachedDataType="numeric"
+                      cachedName="SR"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_SR]"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[SR]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dismissals]"
+                      cachedDataType="numeric"
+                      cachedName="Dismissals"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dissmissals]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Dismissals]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[St]"
+                      cachedDataType="numeric"
+                      cachedName="St"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stamping]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[St]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ct]"
+                      cachedDataType="numeric"
+                      cachedName="Ct"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Catches]"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Overs]"
+                      cachedDataType="numeric"
+                      cachedName="Overs"
+                      cachedPrecision="5"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Overs]"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Overs]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Bat_average]"
+                      cachedDataType="numeric"
+                      cachedName="Bat_average"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bat_average]"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[Bat_average]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ball_average]"
+                      cachedDataType="numeric"
+                      cachedName="ball_average"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_average]"
+                      lineageId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output].Columns[ball_average]" />
+                    <inputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Average_diff]"
+                      cachedDataType="numeric"
+                      cachedName="Average_diff"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Average_diff]"
+                      lineageId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Average_diff]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Player_ID]"
+                      dataType="numeric"
+                      name="Player_ID"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Span]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Span" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matches]"
+                      dataType="numeric"
+                      name="Matches"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bat_Inns]"
+                      dataType="numeric"
+                      name="Bat_Inns"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Not_out]"
+                      dataType="numeric"
+                      name="Not_out"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Runs_Conceded]"
+                      dataType="numeric"
+                      name="Runs_Conceded"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hundreds]"
+                      dataType="numeric"
+                      name="Hundreds"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fifties]"
+                      dataType="numeric"
+                      name="Fifties"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ducks]"
+                      dataType="numeric"
+                      name="Ducks"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[High_Score]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="High_Score" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Country_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_Inns]"
+                      dataType="numeric"
+                      name="Ball_Inns"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maidens]"
+                      dataType="numeric"
+                      name="Maidens"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wickets]"
+                      dataType="numeric"
+                      name="Wickets"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BBI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BBI" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BBM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="BBM" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_SR]"
+                      dataType="numeric"
+                      name="Ball_SR"
+                      precision="6"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ten_Wk_Haul]"
+                      dataType="numeric"
+                      name="Ten_Wk_Haul"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Five_Wk_Haul]"
+                      dataType="numeric"
+                      name="Five_Wk_Haul"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Field_Inns]"
+                      dataType="numeric"
+                      name="Field_Inns"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dissmissals]"
+                      dataType="numeric"
+                      name="Dissmissals"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Catches]"
+                      dataType="numeric"
+                      name="Catches"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Stamping]"
+                      dataType="numeric"
+                      name="Stamping"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ct_Wk]"
+                      dataType="numeric"
+                      name="Ct_Wk"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ct_Fi]"
+                      dataType="numeric"
+                      name="Ct_Fi"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Overs]"
+                      dataType="numeric"
+                      name="Overs"
+                      precision="5"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bat_average]"
+                      dataType="numeric"
+                      name="Bat_average"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ball_average]"
+                      dataType="numeric"
+                      name="Ball_average"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Average_diff]"
+                      dataType="numeric"
+                      name="Average_diff"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Player_Details_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Player_ID]"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_ID]"
+                      name="Player_ID"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Player_Name]"
+                      length="50"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]"
+                      name="Player_Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Player_ID]"
+                      dataType="numeric"
+                      name="Player_ID"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Player_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Player_Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Player_ID]"
+                      dataType="numeric"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Player_ID]"
+                      name="Player_ID"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Player_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Player_Name]"
+                      name="Player_Name" />
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Test Batting"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Test Batting"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Stg_Test_Batting_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Stg_Test_Batting_164278]) [refTable]
+where [refTable].[Player_Name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Player_Name" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Span" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Matches" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Bat_Inns" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Hundreds" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Fifties" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ducks" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Not_Out" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Runs" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Highest_Score" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\Test Batting.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Test Batting.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Test Batting.Inputs[Lookup Input].Columns[Player_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Player_Name"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Player_Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Batting.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Span]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Span]"
+                      name="Span"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Span</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Matches]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Matches]"
+                      name="Matches"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Matches</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Bat_Inns]"
+                      name="Bat_Inns"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Bat_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Hundreds]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Hundreds]"
+                      name="Hundreds"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Hundreds</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Fifties]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Fifties]"
+                      name="Fifties"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Fifties</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Ducks]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Ducks]"
+                      name="Ducks"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ducks</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="15"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Country</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Not_Out]"
+                      name="Not_Out"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Not_Out</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Runs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Runs]"
+                      name="Runs"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Runs</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Highest_Score]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="4"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output].Columns[Highest_Score]"
+                      name="Highest_Score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Highest_Score</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Batting.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Batting.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Batting.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Test  Fact\Test Batting.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Batting.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Batting.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Test Bowling"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Test Bowling"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Stg_Test_Bowling_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Stg_Test_Bowling_164278]) [refTable]
+where [refTable].[Player_Name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Player_Name" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Span" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Matches" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ball_Inns" dataType="DT_NUMERIC" length="0" precision="4" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Balls" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Maidens" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Runs_Conceded" dataType="DT_NUMERIC" length="0" precision="5" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Wkts" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BBI" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="BBM" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SR" dataType="DT_NUMERIC" length="0" precision="6" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Five_Wk_Haul" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ten_Wk_Haul" dataType="DT_NUMERIC" length="0" precision="3" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\Test Bowling.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input].Columns[Player_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Player_Name"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Player_Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ball_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ball_Inns]"
+                      name="Ball_Inns"
+                      precision="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ball_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Balls]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Balls]"
+                      name="Balls"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Balls</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Maidens]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Maidens]"
+                      name="Maidens"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Maidens</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Runs_Conceded]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Runs_Conceded]"
+                      name="Runs_Conceded"
+                      precision="5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Runs_Conceded</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Wkts]"
+                      name="Wkts"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Wkts</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBI]"
+                      name="BBI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BBI</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="10"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[BBM]"
+                      name="BBM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">BBM</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[SR]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[SR]"
+                      name="SR"
+                      precision="6"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">SR</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ten_Wk_Haul]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Ten_Wk_Haul]"
+                      name="Ten_Wk_Haul"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ten_Wk_Haul</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Five_Wk_Haul]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output].Columns[Five_Wk_Haul]"
+                      name="Five_Wk_Haul"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Five_Wk_Haul</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Bowling.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Bowling.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Bowling.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test  Fact\Test Fielding"
+              componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Test Fielding"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Stg_Test_Fielding_164278]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Stg_Test_Fielding_164278]) [refTable]
+where [refTable].[Player_Name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Player_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Span" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Matches" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Field_Inns" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Dismissals" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ct" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="St" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ct_Wk" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ct_Fi" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test  Fact\Test Fielding.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  connectionManagerRefId="Package.ConnectionManagers[blrinforma.SSISDB.bissis1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input].Columns[Player_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Player_Name"
+                      lineageId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output].Columns[Player_Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Player_Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Field_Inns]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Field_Inns]"
+                      name="Field_Inns"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Field_Inns</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Dismissals]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Dismissals]"
+                      name="Dismissals"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Dismissals</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct]"
+                      name="Ct"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ct</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[St]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[St]"
+                      name="St"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">St</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Wk]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Wk]"
+                      name="Ct_Wk"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ct_Wk</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Fi]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output].Columns[Ct_Fi]"
+                      name="Ct_Fi"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Ct_Fi</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Fielding.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test  Fact\Test Fielding.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test  Fact\Test Fielding.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Test  Fact.Paths[Derived Column Output]"
+              endId="Package\Test  Fact\Derived Column 1.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Test  Fact\Convert balls into overs.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Derived Column Output1]"
+              endId="Package\Test  Fact\Country Details.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Test  Fact\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup Match Output]"
+              endId="Package\Test  Fact\Test Fielding.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Test  Fact\Test Batting.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup Match Output1]"
+              endId="Package\Test  Fact\Test Bowling.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Test  Fact\Test Fielding.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup Match Output2]"
+              endId="Package\Test  Fact\Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Test  Fact\Country Details.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup Match Output3]"
+              endId="Package\Test  Fact\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Test  Fact\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup Match Output4]"
+              endId="Package\Test  Fact\Convert balls into overs.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Test  Fact\Test Bowling.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[Lookup No Match Output]"
+              endId="Package\Test  Fact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Test  Fact\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Test  Fact.Paths[OLE DB Source Output]"
+              endId="Package\Test  Fact\Test Batting.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Test  Fact\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Test  Fact"
+          TopLeft="310,136" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Test  Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Test  Fact\OLE DB Destination"
+          TopLeft="958,477" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Test  Fact\Test Bowling"
+          TopLeft="181,350" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Test  Fact\Country Details"
+          TopLeft="463,483" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Test  Fact\Lookup"
+          TopLeft="719,478" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Test  Fact\Test Fielding"
+          TopLeft="179,250" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Test  Fact\Test Batting"
+          TopLeft="183,145" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Test  Fact\Derived Column"
+          TopLeft="944,592" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Test  Fact\OLE DB Source"
+          TopLeft="172,55" />
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[OLE DB Source Output]"
+          TopLeft="250,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup No Match Output]"
+          TopLeft="834,498.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,0"
+              Start="0,0"
+              End="116.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.44361328125,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup Match Output3]"
+          TopLeft="776.5,520">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="245.5,72"
+              Start="0,0"
+              End="245.5,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="241.5,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="241.5,36"
+                    Point2="245.5,36"
+                    Point3="245.5,40" />
+                  <mssgle:LineSegment
+                    End="245.5,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="74.55861328125,41,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup Match Output2]"
+          TopLeft="616,501.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103,0"
+              Start="0,0"
+              End="95.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="95.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.441386718750003,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup Match Output1]"
+          TopLeft="250.5,292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup Match Output]"
+          TopLeft="250.75,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,21.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Test  Fact\Convert balls into overs"
+          TopLeft="153,476" />
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Lookup Match Output4]"
+          TopLeft="250.25,392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Test  Fact\Derived Column 1"
+          TopLeft="171,580" />
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Derived Column Output]"
+          TopLeft="249,518">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.6666666666667,62"
+              Start="0,0"
+              End="-21.6666666666667,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8427370948379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8427370948379"
+                    Point2="0,36.8427370948379"
+                    Point3="-4,36.8427370948379" />
+                  <mssgle:LineSegment
+                    End="-17.6666666666667,36.8427370948379" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.6666666666667,36.8427370948379"
+                    Point2="-21.6666666666667,36.8427370948379"
+                    Point3="-21.6666666666667,40.8427370948379" />
+                  <mssgle:LineSegment
+                    End="-21.6666666666667,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Test  Fact.Paths[Derived Column Output1]"
+          TopLeft="279.666666666667,580">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="259.833333333333,-55"
+              Start="0,0"
+              End="259.833333333333,-47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.3169267707083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.3169267707083"
+                    Point2="0,-22.3169267707083"
+                    Point3="4,-22.3169267707083" />
+                  <mssgle:LineSegment
+                    End="255.833333333333,-22.3169267707083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="255.833333333333,-22.3169267707083"
+                    Point2="259.833333333333,-22.3169267707083"
+                    Point3="259.833333333333,-26.3169267707083" />
+                  <mssgle:LineSegment
+                    End="259.833333333333,-47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\Test Bowling">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Stg_Test_Bowling_164278]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\Country Details">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Country_Details_164278]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Test_Fact_164278]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\Test Fielding">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Stg_Test_Fielding_164278]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\Test Batting">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Stg_Test_Batting_164278]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test  Fact\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
